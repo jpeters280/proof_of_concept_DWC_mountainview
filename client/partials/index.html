@@ -1,0 +1,32 @@
+<h1>Ugly Editable Homepage</h1>
+
+<h1>this is the editable space all its doing is pulling the first out of the database this can be used to give editability to the staff if an entire page is made like this</h1>
+<div ng-repeat-start="friend in friends" ng-if="$first" big>
+    <h1>{{friend.firstName}}</h1>
+    <a href="{{friend.lastName}}"> this will link nowhere but the link is tied to friend.lastName</a>
+    <hr>
+    <h3>friend {{friend.birthday | date:'yyyy-MM-dd'}} all we need to do is direct the search of the db to the item(s) we need and then can display them as we want</h3>
+    <hr>
+    <h2>we will still ned to pre input something into the db to give it a start afterwards its just an edit function that'll take care of the rest (a small amount of extra effort on our part but it should make the DWC a lot more self reliant in the long run)</h2>
+    <hr>
+    <a ng-href="#/friends/{{friend._id}}/edit">Update</a>
+  </div>
+  <div ng-repeat-end ng-if="!$first">
+  </div>
+<!-- <hr>
+<table>
+	<tr >
+		<th>Name</th>
+		<th>Show</th>
+		<th>Update</th>
+		<th>Delete</th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="friend in friends | filter:searchText">
+		<td>{{friend.firstName}} {{friend.lastName}}</td>
+		<td><a ng-href="#/friends/{{friend._id}}">Show</a></td>
+		<td><a ng-href="#/friends/{{friend._id}}/edit">Update</a></td>
+		<td><a href="#" ng-click="delete(friend._id)">Delete</a></td>
+		<td><input type="hidden" value={{friend.birthday}}></td>
+	</tr>
+</table> -->
