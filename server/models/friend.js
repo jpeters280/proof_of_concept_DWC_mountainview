@@ -14,6 +14,9 @@ var FriendSchema = new mongoose.Schema({
 		trim: true,
 		minlength: 2
 	},
+	image: {
+    type: String
+  },
 	birthday: Date
 });
 

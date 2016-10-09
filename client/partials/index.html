@@ -1,15 +1,14 @@
 <h1>Ugly Editable Homepage</h1>
 
-<h1>this is the editable space all its doing is pulling the first out of the database this can be used to give editability to the staff if an entire page is made like this</h1>
+<h1>the area below this is editable... this is not</h1>
 <div ng-repeat-start="friend in friends" ng-if="$first" big>
     <h1>{{friend.firstName}}</h1>
-    <a href="{{friend.lastName}}"> this will link nowhere but the link is tied to friend.lastName</a>
+    <p>click the image it's a link (this text is also not editable)</p>
+    <a href="{{friend.lastName}}"> <img data-ng-src="{{'data:image/jpg;base64,'+friend.image}}" width="30%" height="auto"></a>
     <hr>
-    <h3>friend {{friend.birthday | date:'yyyy-MM-dd'}} all we need to do is direct the search of the db to the item(s) we need and then can display them as we want</h3>
+    <h3>date {{friend.birthday | date:'yyyy-MM-dd'}} this is a date you can edit it but not the text surrounding it</h3>
     <hr>
-    <h2>we will still ned to pre input something into the db to give it a start afterwards its just an edit function that'll take care of the rest (a small amount of extra effort on our part but it should make the DWC a lot more self reliant in the long run)</h2>
-    <hr>
-    <a ng-href="#/friends/{{friend._id}}/edit">Update</a>
+    <a ng-href="#/friends/{{friend._id}}/edit">if you click this it will take you to a page that will allow you to edit the fields above</a>
   </div>
   <div ng-repeat-end ng-if="!$first">
   </div>

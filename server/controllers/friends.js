@@ -37,6 +37,7 @@ module.exports = {
             if (err) {
                 res.json({ error: err }); // could not locate the entry
             }
+            friend.image = req.body.image.base64;
             friend.firstName = req.body.firstName;
             friend.lastName = req.body.lastName;
             friend.birthday = req.body.birthday;

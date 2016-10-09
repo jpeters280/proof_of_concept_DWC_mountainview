@@ -7,8 +7,8 @@ var express  = require( 'express' ), // this loads the express code from node-mo
 
 app.use( express.static( path.join( root, 'client' ))); // this tells the application that the static files are in ./client
 app.use( express.static( path.join( root, 'node_modules' ))); // other static files in ./bower_components
-app.use(bp.json());
-app.use(bp.urlencoded({extended: false}));
+app.use(bp.json(({limit: '16mb'})));
+app.use(bp.urlencoded({extended: true}));
 require('./server/config/db.js'); // this loads the db.js configuration files for connecting to database and loading models
 require('./server/config/routes.js')(app); // this loads and runs the routes files for backend route set up.
 
